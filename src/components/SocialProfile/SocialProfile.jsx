@@ -1,40 +1,7 @@
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import { ProfileHead, ProfileList } from './SocialProfile.styled';
 
-const ProfileHead = styled.div`
-    width: 240px;
-    border: 2px solid black;
-
-    img {
-        display: block;
-        margin: 20px auto 20px auto;
-        width: 150px;
-        height: 150px;
-        border-radius: 100%;
-    }
-
-    p {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-`;
-
-const ProfileList = styled.ul`
-    display: flex;
-    /* width: 200px; */
-    padding-inline-start: 0px;
-
-    li {
-        display: flex;
-        flex-direction: column;
-        border: 2px solid black;
-        text-align: center;
-        width: 77px;
-        font-size: 15px;
-    }
-`;
-
-const Profile = ({ user: { username, tag, location, avatar, stats } }) => {
+const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
         <div>
             <ProfileHead>
@@ -68,8 +35,8 @@ Profile.propTypes = {
     tag: PropTypes.string,
     location: PropTypes.string,
     followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
+    views: PropTypes.array,
+    likes: PropTypes.array,
 };
 
 export default Profile;
